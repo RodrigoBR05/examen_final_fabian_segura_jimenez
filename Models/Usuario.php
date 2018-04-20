@@ -53,7 +53,7 @@ class Usuario{
             $this->rol = "Vendedor";
         } 
         $sql = "UPDATE usuario SET nombre = '{$this->nombre}', nick = '{$this->nick}', "
-        . "tipo_rol = '{$this->rol}',rol = '{$this->rol}' "
+        . "tipo_rol = '{$this->tipo_rol}',rol = '{$this->rol}' "
         . "WHERE id = '{$this->id}'";
         $this->con->consultaSimple($sql);
     }

@@ -22,7 +22,23 @@ class Autenticacion{
         $datos = $this->con->consultaRetorno($sql);
         $row = mysqli_fetch_array($datos);
         $claveUsuario = $row['contrasenia'];
+        $pass = sha1($clave);
+
+        echo $pass;
+
+        /*
+        if($claveUsuario == sha1($_POST["passFormulario"])) {
+            echo "pass correcto";
+        }
+
         echo $claveUsuario;
+
+        $pass = sha1("prueba");
+        */
+
+    //comparar $pass con el pass enviado en un formulario
+
+    
         /*
         if(password_verify($clave, $claveUsuario)){
             return $row;

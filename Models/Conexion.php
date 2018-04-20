@@ -3,7 +3,7 @@
 class Conexion{
       
     private $datos = array(
-	"host" => "http://192.168.100.11/",
+	"host" => "localhost",
 	"user" => "root",
 	"pass" => "",
 	"db" => "examen_final_progra"

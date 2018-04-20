@@ -43,7 +43,7 @@
             </ul>
           </li>
           <div class="row center">
-              <p class="white-text">Copyright © 2017 Centro Diurno Paraíso</p>
+              <p class="white-text">Copyright © 2018</p>
           </div>
       </ul>
     </div>

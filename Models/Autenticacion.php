@@ -24,7 +24,6 @@ class Autenticacion{
         $claveUsuario = $row['contrasenia'];
         $pass = sha1($clave);
         if($claveUsuario == $pass) {
-            echo 'Entre';
            return $row;
         }
         return NULL;

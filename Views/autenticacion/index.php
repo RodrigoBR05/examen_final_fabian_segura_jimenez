@@ -63,9 +63,6 @@
                               <input class='validate' type='password' name='password' id='password' required/>
                               <label for='password' data-error="inválido" data-success="válido">Ingrese su contraseña</label>
                             </div>
-                            <label style='float: right;'>
-                                <a class='orange-text' href='<?php echo URL; ?>autenticacion/recuperarClave'><b>He olvidado mi contraseña</b></a>
-                            </label>
                           </div>
 
                           <br />

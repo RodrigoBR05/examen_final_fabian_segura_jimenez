@@ -51,7 +51,7 @@
 
 
         public function delete($id){
-            $this->usuario->set("id_usuario",$id);
+            $this->usuario->set("id",$id);
             $this->usuario->delete();
             header('Location:'.URL.'usuarios');
         }

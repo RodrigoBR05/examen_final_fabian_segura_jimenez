@@ -15,22 +15,16 @@
             if ($_POST) {                
                 $usuario = (isset($_POST['usuario']) ? $_POST['usuario'] : '');
                 $verificarUser=$this->login($_POST['usuario'],$_POST['password']);
-                echo $verificarUser['tipo_rol'];
-                /*
                 if($verificarUser){
-                    if ($verificarUser['id_tipo_usuario'] == 1) {
-                        header('Location: '.URL.'usuarios?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
-                        AutenticacionController::$idUsuario = $verificarUser['id_usuario'];
-                    }elseif($verificarUser['id_tipo_usuario'] == 2){
-                        header('Location: '.URL.'activos?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
+                    if ($verificarUser['tipo_rol'] == 1) {
+                        header('Location: '.URL.'usuarios?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
                         //AutenticacionController::$idUsuario = $verificarUser['id_usuario'];
-                    }elseif($verificarUser['id_tipo_usuario'] == 3){
-                        header('Location: '.URL.'productos?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
+                    }elseif($verificarUser['tipo_rol'] == 2){
+                        //header('Location: '.URL.'activos?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
                         //AutenticacionController::$idUsuario = $verificarUser['id_usuario'];
                     }
                     
                 }
-                */
             }//POST
         }//index
         

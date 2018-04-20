@@ -5,13 +5,11 @@ if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['admin'] = $_GET['admin'];
 }
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
-    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/Head.php'; 
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminGeneral.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminActivos.php';
-    }elseif($_SESSION['tipo']==3){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminInventarioComedor.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminActivos.php';
     }
 ?>
 

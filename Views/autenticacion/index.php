@@ -11,12 +11,12 @@
          <html lang="es">
           <head>
             <meta charset="UTF-8">
-            <title>Sistema de Control de Activos e Inventario</title>
+            <title>Cotización de productos</title>
             <!--Import Google Icon Font-->
             <link href="<?php echo URL; ?>Views/assets/css/index.css" rel="stylesheet">
             <!--Import materialize.css-->
             <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/materialize.css"  media="screen,projection"/>
-            <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/scaicss.css"  media="screen,projection"/>
+            <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/cssfsj.css"  media="screen,projection"/>
 
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 

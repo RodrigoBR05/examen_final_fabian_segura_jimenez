@@ -7,7 +7,7 @@
     <link href="<?php echo URL; ?>Views/assets/css/index.css" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/materialize.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/scaicss.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/cssfsj.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>Views/assets/css/jquery.dataTables.min.css"  media="screen,projection"/>
 
     <!--Let browser know website is optimized for mobile-->

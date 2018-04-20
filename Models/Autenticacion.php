@@ -21,13 +21,14 @@ class Autenticacion{
         $sql = "SELECT * FROM usuario WHERE nick = '{$usuario}'";
         $datos = $this->con->consultaRetorno($sql);
         $row = mysqli_fetch_array($datos);
-        //echo $row;
+        $claveUsuario = $row['contrasenia'];
+        echo $claveUsuario;
         /*
-        $claveUsuario = $row['clave'];
         if(password_verify($clave, $claveUsuario)){
             return $row;
         }
         return NULL;
+
         */
     }       
     

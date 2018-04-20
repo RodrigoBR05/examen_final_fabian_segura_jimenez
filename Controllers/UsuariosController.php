@@ -38,7 +38,7 @@
             }else{
                 $this->usuario->set("id", $id);
                 $this->usuario->set("nombre", $_POST['nombre']);
-                $this->usuario->set("nick", $_POST['usuario']);
+                $this->usuario->set("nick", $_POST['user']);
                 $this->usuario->set("tipo_rol", $_POST['tipo_rol']);
                 $this->usuario->update();
                 //Página de listado de usuarios

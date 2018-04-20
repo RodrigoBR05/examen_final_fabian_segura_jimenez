@@ -5,13 +5,11 @@ if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['admin'] = $_GET['admin'];
 }
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
-    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/Head.php'; 
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminGeneral.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminActivos.php';
-    }elseif($_SESSION['tipo']==3){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminInventarioComedor.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminActivos.php';
     }
 ?>
 
@@ -28,29 +26,9 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     <div class="row">
         <form class="col s12" method="POST" id="agregar_form">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
               <input type='text' id="nombre" name="nombre" class="validate" required>
               <label for="nombre" data-error="inválido" data-success="válido">Nombre</label>
-            </div>
-            <div class="input-field col s6">
-              <input type='text' id="apellidos" name="apellidos" class="validate" required>
-              <label for="apellidos" data-error="inválido" data-success="válido">Apellidos</label>
-            </div>              
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="email" id="email" name="email"  class="validate" required>
-              <label for="email" data-error="inválido" data-success="válido">Email</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="tel" id="telefono" name="telefono"  class="validate" placeholder="00000000" required>
-              <label for="telefono" data-error="inválido" data-success="válido">Teléfono</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input type='text' id="puesto" name="puesto" class="validate" required>
-              <label for="puesto" data-error="inválido" data-success="válido">Puesto</label>
             </div>            
           </div>
           <div class="row">
@@ -63,14 +41,14 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
               <label for='password' data-error="inválido" data-success="válido">Contraseña</label>
             </div>             
           </div>
+
           <div class="row">
              
              <div class="input-field col s12">                 
-                 <select class="browser-default" name="id_tipo_usuario" required>
+                 <select class="browser-default" name="tipo_rol" required>
                   <option value="" disabled selected>Seleccione el tipo de usuario</option>
-                  <option value="1">Administrador general</option>
-                  <option value="2">Administrador de activos</option>
-                  <option value="3">Administrador de inventario comedor</option>
+                  <option value="1">Administrador</option>
+                  <option value="2">Vendedor</option>
                 </select>
               </div>
           </div>

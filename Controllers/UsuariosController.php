@@ -19,8 +19,7 @@
                 $this->usuario->set("nombre", $_POST['nombre']);
                 $this->usuario->set("nick", $_POST['user']);
                 $this->usuario->set("contrasenia", $_POST['password']);                
-                $this->usuario->set("tipo_rol", $_POST['tipo_rol']);  
-                
+                $this->usuario->set("tipo_rol", $_POST['tipo_rol']);                  
                 $this->usuario->create(); 
             }            
         }

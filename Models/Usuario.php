@@ -36,7 +36,7 @@ class Usuario{
         } 
 
         $sql = "INSERT INTO usuario (nombre,nick,contrasenia,tipo_rol,rol)
-            VALUES ('{$this->nombre}', '{$this->nick}', '{$this->contrasenia}', '{$this->tipo_rol}','{$this->rol}')";
+            VALUES ('{$this->nombre}', '{$this->nick}', '{$encriptacionClave}', '{$this->tipo_rol}','{$this->rol}')";
         //print $sql;
         $this->con->consultaSimple($sql);        
     }

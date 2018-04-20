@@ -62,10 +62,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
               <tr>
                   <th class="center">Id</th>
                   <th class="center">Nombre</th>
-                  <th class="center">Apellidos</th>
-                  <th class="center">Email</th>
-                  <th class="center">Teléfono</th>
-                  <th class="center">Puesto</th>
+                  <th class="center">Nick</th>
+                  <th class="center">Rol</th>
                   <th class="center">Acciones</th>
               </tr>
             </thead>
@@ -75,12 +73,10 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                 if (!empty($datos)) {
                     while($row = mysqli_fetch_array($datos)){ ?>
                     <tr>
-                        <td class="center"><?php echo $row['id_usuario']; ?></td>
+                        <td class="center"><?php echo $row['id']; ?></td>
                         <td class="center"><?php echo $row['nombre']; ?></td>
-                        <td class="center"><?php echo $row['apellidos']; ?></td>
-                        <td class="center"><?php echo $row['email']; ?></td>
-                        <td class="center"><?php echo $row['telefono']; ?></td>
-                        <td class="center"><?php echo $row['puesto']; ?></td>
+                        <td class="center"><?php echo $row['nick']; ?></td>
+                        <td class="center"><?php echo $row['rol']; ?></td>
                         <td class="center">
                             <a class="btn-floating waves-effect waves-light green" title="casa" href="<?php echo URL; ?>usuarios/read/<?php echo $row['id_usuario']; ?>"><i class="material-icons">zoom_in</i></a>                       
                             <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>usuarios/update/<?php echo $row['id_usuario']; ?>"><i class="material-icons">build</i></a>                       

@@ -5,13 +5,11 @@ if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['admin'] = $_GET['admin'];
 }
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
-    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/Head.php'; 
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdmin.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminActivos.php';
-    }elseif($_SESSION['tipo']==3){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminInventarioComedor.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderVendedor.php';
     }
 ?>
 
@@ -28,40 +26,26 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     <div class="row">
         <form class="col s12" method="POST" id="actualizar_form">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
               <input type='text' id="nombre" value="<?php echo $datos['nombre']; ?>" name="nombre" class="validate" required>
               <label for="nombre" data-error="inválido" data-success="válido">Nombre</label>
-            </div>
-            <div class="input-field col s6">
-              <input type='text' id="apellidos" value="<?php echo $datos['apellidos']; ?>" name="apellidos" class="validate" required>
-              <label for="apellidos" data-error="inválido" data-success="válido">Apellidos</label>
-            </div>              
+            </div>             
           </div>
+
           <div class="row">
-            <div class="input-field col s6">
-              <input type="email" id="email" value="<?php echo $datos['email']; ?>" name="email"  class="validate" required>
-              <label for="email" data-error="inválido" data-success="válido">Email</label>
-            </div>
-            <div class="input-field col s6">
-              <input type="tel" id="telefono" value="<?php echo $datos['telefono']; ?>" name="telefono"  class="validate" placeholder="00000000" required>
-              <label for="telefono" data-error="inválido" data-success="válido">Teléfono</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input type='text' id="puesto" value="<?php echo $datos['puesto']; ?>" name="puesto" class="validate" required>
-              <label for="puesto" data-error="inválido" data-success="válido">Puesto</label>
+            <div class="input-field col s12">
+              <input type='text' id="user" name="user" class="validate" value="<?php echo $datos['nick']; ?>" required>
+              <label for="user" data-error="inválido" data-success="válido">Usuario</label>
             </div>            
+          </div>
 
-             <div class="col s6"> 
+          <div class="row">           
+             <div class="col s12"> 
                 <label>Tipo de usuario</label>
-                <select class="browser-default" name="id_tipo_usuario" id="id_tipo_usuario">
-                  <option value="1" <?php if($datos['id_tipo_usuario']=="1") echo "selected";?>>Administrador general</option>
-                  <option value="2" <?php if($datos['id_tipo_usuario']=="2") echo "selected";?>>Administrador de activos</option>
-                  <option value="3" <?php if($datos['id_tipo_usuario']=="3") echo "selected";?>>Administrador de inventario comedor</option>
+                <select class="browser-default" name="tipo_rol" id="tipo_rol">
+                  <option value="1" <?php if($datos['tipo_rol']=="1") echo "selected";?>>Administrador</option>
+                  <option value="2" <?php if($datos['tipo_rol']=="2") echo "selected";?>>Vendedor</option>
                 </select>
-                                                              
-
              </div>            
           </div>
             

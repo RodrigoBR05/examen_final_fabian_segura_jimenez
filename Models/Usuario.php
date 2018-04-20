@@ -4,7 +4,7 @@ class Usuario{
     private $id;
     private $nombre;
     private $nick;
-    private $contrasenia
+    private $contrasenia;
     private $tipo_rol;
     private $rol;
     private $con;

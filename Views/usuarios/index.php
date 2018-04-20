@@ -7,9 +7,9 @@ if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/Head.php'; 
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdmin.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdminActivos.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderVendedor.php';
     }
 ?>
 

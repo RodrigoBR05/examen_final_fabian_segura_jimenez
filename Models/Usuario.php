@@ -28,7 +28,7 @@ class Usuario{
     }
     
     public function create(){        
-        $encriptacionClave = password_hash($this->contrasenia, PASSWORD_DEFAULT, [15]);
+        $encriptacionClave = sha1($this->contrasenia);
         if ($this->tipo_rol == 1) {
             $this->rol = "Administrador";
         } elseif ($this->tipo_rol == 2) {
@@ -36,7 +36,7 @@ class Usuario{
         } 
 
         $sql = "INSERT INTO usuario (nombre,nick,contrasenia,tipo_rol,rol)
-                VALUES ('{$this->nombre}', '{$this->nick}', '{$this->contrasenia}', '{$this->tipo_rol}','{$this->tipo_rol}')";
+            VALUES ('{$this->nombre}', '{$this->nick}', '{$this->contrasenia}', '{$this->tipo_rol}','{$this->rol}')";
         //print $sql;
         $this->con->consultaSimple($sql);        
     }

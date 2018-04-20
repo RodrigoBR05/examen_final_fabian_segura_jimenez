@@ -20,8 +20,8 @@ class Autenticacion{
     public function login($usuario,$clave){
         $sql = "SELECT * FROM usuario WHERE nick = '{$usuario}'";
         $datos = $this->con->consultaRetorno($sql);
-        print($datos);
         $row = mysqli_fetch_array($datos);
+        echo $row;
         /*
         $claveUsuario = $row['clave'];
         if(password_verify($clave, $claveUsuario)){

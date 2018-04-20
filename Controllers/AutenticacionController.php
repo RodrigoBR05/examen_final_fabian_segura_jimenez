@@ -15,7 +15,7 @@
             if ($_POST) {                
                 $usuario = (isset($_POST['usuario']) ? $_POST['usuario'] : '');
                 $verificarUser=$this->login($_POST['usuario'],$_POST['password']);
-                echo $verificarUser;
+                echo $verificarUser['tipo_rol'];
                 /*
                 if($verificarUser){
                     if ($verificarUser['id_tipo_usuario'] == 1) {

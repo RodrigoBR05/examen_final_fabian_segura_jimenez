@@ -52,8 +52,8 @@ class Usuario{
         } elseif ($this->tipo_rol == 2) {
             $this->rol = "Vendedor";
         } 
-        $sql = "UPDATE usuario SET nombre = '{$this->nombre}', nick = '{$this->nick}', contrasenia = '{$this->contrasenia}',"
-        . "tipo_rol = '{$this->tipo_rol}',tipo_rol = '{$this->tipo_rol}' "
+        $sql = "UPDATE usuario SET nombre = '{$this->nombre}', nick = '{$this->nick}', "
+        . "tipo_rol = '{$this->rol}',tipo_rol = '{$this->rol}' "
         . "WHERE id = '{$this->id}'";
         $this->con->consultaSimple($sql);
     }

@@ -36,13 +36,17 @@
                 $datos = $this->usuario->read();
                 return $datos;
             }else{
-                $this->usuario->set("id_usuario", $id);
+                echo "********************************************************************************PRUEBS";
+                echo "********************************************************************************PRUEBS";
+                echo "********************************************************************************PRUEBS";
+                echo "********************************************************************************PRUEBS";
+                echo "********************************************************************************PRUEBS";
+                echo "********************************************************************************PRUEBS";
+                
+                $this->usuario->set("id", $id);
                 $this->usuario->set("nombre", $_POST['nombre']);
-                $this->usuario->set("apellidos", $_POST['apellidos']);
-                $this->usuario->set("email", $_POST['email']);
-                $this->usuario->set("telefono", $_POST['telefono']);
-                $this->usuario->set("puesto", $_POST['puesto']);
-                $this->usuario->set("id_tipo_usuario", $_POST['id_tipo_usuario']);
+                $this->usuario->set("nick", $_POST['nick']);
+                $this->usuario->set("tipo_rol", $_POST['tipo_rol']);
                 $this->usuario->update();
                 //Página de listado de usuarios
                 header("Location: ".URL."usuarios");

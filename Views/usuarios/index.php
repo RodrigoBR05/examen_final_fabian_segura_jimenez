@@ -71,7 +71,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                         <td class="center"><?php echo $row['nick']; ?></td>
                         <td class="center"><?php echo $row['rol']; ?></td>
                         <td class="center">                       
-                            <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>usuarios/update/<?php echo $row['id_usuario']; ?>"><i class="material-icons">build</i></a>                       
+                            <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>usuarios/update/<?php echo $row['id']; ?>"><i class="material-icons">build</i></a>                       
                             <a class="open-Modal btn_delete btn-floating waves-effect waves-light red" data-id="<?php echo $row['id']; ?>" href="#modalEliminarUsuario"><i class="material-icons">delete_forever</i></a>
 
                         </td>

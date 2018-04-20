@@ -25,14 +25,14 @@
         }
         
         public function read($id){
-            $this->usuario->set("id_usuario", $id);
+            $this->usuario->set("id", $id);
             $datos = $this->usuario->read();
             return $datos;
         }
         
         public function update($id){
             if (!$_POST) {
-                $this->usuario->set("id_usuario", $id);
+                $this->usuario->set("id", $id);
                 $datos = $this->usuario->read();
                 return $datos;
             }else{
@@ -55,12 +55,7 @@
             $this->usuario->delete();
             header('Location:'.URL.'usuarios');
         }
-        
-        public function excel(){
-          $datos = $this->usuario->toList();
-          return $datos;
-        }//excel
-        
+            
     }
     $usuarios = new UsuariosController();    
 ?>

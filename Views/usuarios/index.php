@@ -47,15 +47,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     </nav>
 </header>
 
-<main >
-    <div class="container center">
-        <div class="input-field  col l3 offset-l1"><a class="waves-effect waves-light btn light-blue darken-1"
-          href="<?php echo URL; ?>usuarios/excel">Generar reporte</a></div>             
-    </div>
-    <br>    
-    
-    <div class="divider"></div>
-    <div class="row responsive-table">       
+<main >    
+    <div class="row responsive-table">     
     
     <table class="display" id="tableUsuarios">
             <thead>
@@ -77,8 +70,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                         <td class="center"><?php echo $row['nombre']; ?></td>
                         <td class="center"><?php echo $row['nick']; ?></td>
                         <td class="center"><?php echo $row['rol']; ?></td>
-                        <td class="center">
-                            <a class="btn-floating waves-effect waves-light green" title="casa" href="<?php echo URL; ?>usuarios/read/<?php echo $row['id_usuario']; ?>"><i class="material-icons">zoom_in</i></a>                       
+                        <td class="center">                       
                             <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>usuarios/update/<?php echo $row['id_usuario']; ?>"><i class="material-icons">build</i></a>                       
                             <a class="open-Modal btn_delete btn-floating waves-effect waves-light red" data-id="<?php echo $row['id_usuario']; ?>" href="#modalEliminarUsuario"><i class="material-icons">delete_forever</i></a>
 

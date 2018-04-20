@@ -15,6 +15,8 @@
             if ($_POST) {                
                 $usuario = (isset($_POST['usuario']) ? $_POST['usuario'] : '');
                 $verificarUser=$this->login($_POST['usuario'],$_POST['password']);
+                echo $verificarUser;
+                /*
                 if($verificarUser){
                     if ($verificarUser['id_tipo_usuario'] == 1) {
                         header('Location: '.URL.'usuarios?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
@@ -28,6 +30,7 @@
                     }
                     
                 }
+                */
             }//POST
         }//index
         

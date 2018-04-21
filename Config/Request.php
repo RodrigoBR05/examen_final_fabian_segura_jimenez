@@ -16,7 +16,7 @@
                                     $this->controlador = "autenticacion";
                             }else{
                                     $this->controlador = strtolower(array_shift($ruta));
-                            }	
+                            }
 
                             $this->metodo = strtolower(array_shift($ruta));
 

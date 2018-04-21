@@ -24,51 +24,23 @@ class ClienteController {
            return $datos;
         }
         else{
-            $this->cliente->set("idUsuario", $_POST['id_usuario']);
-            $this->cliente->set("numeroSerie", $_POST['numSerie']);
+            $this->cliente->set("identificador", $_POST['identificador']);
+            $this->cliente->set("tipo_cedula", $_POST['tipo_cedula']);
+            $this->cliente->set("cedula", $_POST['cedula']);
             $this->cliente->set("nombre", $_POST['nombre']);
-            $this->cliente->set("descripcion", $_POST['descripcion']);
-            $this->cliente->set("donadoPor", $_POST['donadoPor']);
-            $this->cliente->set("ubicacionDepartamento", $_POST['departamento']);
-            $this->cliente->set("valorAdquisicion", $_POST['valorAdquisicion']);
-            $this->cliente->set("valorActual", $_POST['valorActual']);
+            $this->cliente->set("apellidos", $_POST['apellidos']);
+            $this->cliente->set("pais", $_POST['pais']);
+            $this->cliente->set("email", $_POST['email']);
+            $this->cliente->set("telefono_fijo", $_POST['telefono_fijo']);
+            $this->cliente->set("telefono_celular", $_POST['telefono_celular']);
+            $this->cliente->set("provincia", $_POST['provincia']);
+            $this->cliente->set("canton", $_POST['canton']);
+            $this->cliente->set("distrito", $_POST['distrito']);
+            $this->cliente->set("direccion_exacta", $_POST['direccion_exacta']);                       
             $this->cliente->create();
             header('Location:'.URL.'cliente/Create');
         }//POST
     }//create
-
-    public function update($id){
-        if (!$_POST) {
-            $this->cliente->set("idActivo", $id);
-            $datos = $this->cliente->getActivo();
-            return $datos;
-        }
-        else if ($_POST) {
-            $this->cliente->set("idActivo", $id);
-            $this->cliente->set("idUsuario", $_POST['id_usuario']);
-            $this->cliente->set("numeroSerie", $_POST['numSerie']);
-            $this->cliente->set("nombre", $_POST['nombre']);
-            $this->cliente->set("descripcion", $_POST['descripcion']);
-            $this->cliente->set("donadoPor", $_POST['donadoPor']);
-            $this->cliente->set("ubicacionDepartamento", $_POST['departamento']);
-            $this->cliente->set("valorAdquisicion", $_POST['valorAdquisicion']);
-            $this->cliente->set("valorActual", $_POST['valorActual']);
-            $this->cliente->update();
-            header('Location:'.URL.'cliente');
-        }
-    }//update
-
-    public function read($id){
-         $this->cliente->set("idActivo", $id);
-         $datos = $this->cliente->getActivo();
-         return $datos;
-    }//read
-
-    public function delete($id){
-        $this->cliente->set("idActivo", $id);
-        $this->cliente->delete();
-        header('Location:'.URL.'activos');
-    }//delete
 
     public function getUsuariosVendedor(){
         $datos = $this->usuario->toListVendedor();

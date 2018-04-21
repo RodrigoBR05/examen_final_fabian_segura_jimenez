@@ -1,9 +1,4 @@
 <?php
-
-
-/*
- productos
- */
 session_start();
 if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['tipo'] = $_GET['tipo'];

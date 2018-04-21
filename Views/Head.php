@@ -54,7 +54,8 @@
           });
         }//getCantones
 
-        getDistrito(id){
+        //Distritos
+        function getDistrito(id){
           console.log(id);
         }//getDistrito
 

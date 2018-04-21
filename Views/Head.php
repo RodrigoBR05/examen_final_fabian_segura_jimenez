@@ -57,7 +57,7 @@
         //Distritos
         function getDistrito(id){
           var idProvincia = $("#provincias").val();
-          console.log(provincia);
+          console.log(idProvincia);
           console.log(id);
         }//getDistrito
 

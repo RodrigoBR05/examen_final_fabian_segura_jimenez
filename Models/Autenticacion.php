@@ -18,13 +18,7 @@ class Autenticacion{
     }
 
     public function login($usuario,$clave){
-      /*
-      $sql = sprintf("SELECT * FROM usuarios WHERE correo='%s' AND contrasenia = %s",
-      mysql_real_escape_string($correo), mysql_real_escape_string($contrasenia));
-      */
-
-
-        $sql = stripslashes("SELECT * FROM usuario WHERE nick='%s'", mysql_real_escape_string($usuario));
+        $sql = "SELECT * FROM usuario WHERE nick = '{$usuario}'";
         $datos = $this->con->consultaRetorno($sql);
         $row = mysqli_fetch_array($datos);
         $claveUsuario = $row['contrasenia'];

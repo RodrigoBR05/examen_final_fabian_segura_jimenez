@@ -96,7 +96,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
           </div>
 
           <div class='row center'>
-            <button data-target="modalAgregarCliente" name='btn_login' class='col s12 l4 offset-l4 btn waves-effect blue darken-4'>Registrar departamento</button>
+            <button data-target="modalAgregarCliente" name='btn_login' class='col s12 l4 offset-l4 btn waves-effect blue darken-4'>Registrar cliente</button>
           </div>
             <input type='text' id="identificador" name="identificador" value="<?php echo $_SESSION['admin']; ?>" style="visibility:hidden">
         </form>

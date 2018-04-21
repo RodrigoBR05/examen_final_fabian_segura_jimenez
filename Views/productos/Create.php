@@ -1,20 +1,15 @@
 <?php
-/* 
- Create producto
- */
-session_start(); 
+session_start();
 if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['tipo'] = $_GET['tipo'];
     $_SESSION['admin'] = $_GET['admin'];
 }
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
-    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/Head.php';
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdmin.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminActivos.php';
-    }elseif($_SESSION['tipo']==3){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminInventarioComedor.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderVendedor.php';
     }
 ?>
 
@@ -32,61 +27,53 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
         <form class="col s12" method="POST" id="agregar_form" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s6">
-              <input type='text' id="nombre" name="nombre" class="validate" required>
-              <label for="nombre" data-error="inválido" data-success="válido">Nombre</label>
-            </div> 
+              <input type='text' id="codigo" name="codigo" class="validate" required>
+              <label for="nombre" data-error="inválido" data-success="válido">Código</label>
+            </div>
             <div class="input-field col s6">
-              <input type='text' id="proveedor" name="proveedor" class="validate" required>
-              <label for="proveedor" data-error="inválido" data-success="válido">Proveedor</label>
-            </div>                          
+              <input type='text' id="nombre" name="nombre" class="validate" required>
+              <label for="proveedor" data-error="inválido" data-success="válido">Nombre</label>
+            </div>
           </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type='text' id="marca" name="marca" class="validate" required>
+              <label for="nombre" data-error="inválido" data-success="válido">Marca</label>
+            </div>
+            <div class="input-field col s6">
+              <input type='text' id="presentacion" name="presentacion" class="validate" required>
+              <label for="proveedor" data-error="inválido" data-success="válido">Presentación</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input type='text' id="precio" name="precio" class="validate" required>
+              <label for="peso" data-error="inválido" data-success="válido">Precio</label>
+            </div>
+
+            <div class="input-field col s6">
+               <select class="browser-default" name="moneda" required>
+                <option value="" disabled selected>Seleccione la moneda</option>
+                <option value="crc">CRC</option>
+                <option value="usd">USD</option>
+                <option value="eur">EUR</option>
+              </select>
+            </div>
+          </div>
+
           <div class="row">
           <div class="input-field col s12">
               <textarea id="descripcion" name="descripcion" class="materialize-textarea" class="validate" required></textarea>
               <label for="descripcion" data-error="inválido" data-success="válido">Descripción del producto</label>
-          </div>                
           </div>
-          <div class="row">            
-            <div class="input-field col s6">
-              <input type='text' id="peso" name="peso" class="validate" required>
-              <label for="peso" data-error="inválido" data-success="válido">Peso</label>
-            </div>
-            
-            <div class="input-field col s6">                 
-               <select class="browser-default" name="tipoPeso" required>
-                <option value="" disabled selected>Seleccione el tipo</option>
-                <option value="UNIDADES">Unidades</option>
-                <option value="KILOGRAMOS">Kilogramos</option>
-                <option value="GRAMOS">Gramos</option>
-                <option value="LITROS">Litros</option>
-                <option value="GALONES">Galones</option>
-              </select>
-            </div>
-          </div>       
-          <div class="row">
-            <div class="input-field col s6">
-                <input type="number" id="cantidadMinima" name="cantidadMinima" class="validate" required>
-              <label for="cantidadMinima" data-error="inválido" data-success="válido">Cantidad Mínima</label>
-            </div>            
-            <div class="input-field col s6">
-                <input type="number" id="cantidadActual" name="cantidadActual" class="validate" required>
-              <label for="cantidadActual" data-error="inválido" data-success="válido">Cantidad actual</label>
-            </div>            
           </div>
-            <div class="row">                
-            <div class="input-field col s6">
-                <label for="imagen">Agregar imagen</label>
-                 </div>
-            </div>
-            <div class="row">                
-                <div class="input-field col s6">
-                    <input type="file" name="imagen" id="imagen" >
-                </div>
-            </div>
+
+
             <div class='row center'>
               <button data-target="modalAgregarProducto" name='btn_reg_producto' class='col s12 l4 offset-l4 btn waves-effect blue darken-4'>Registrar producto</button>
             </div>
-            <input type='text' id="id_usuario" name="id_usuario" value="<?php echo $_SESSION['admin']; ?>" style="visibility:hidden">
+            <input type='text' id="identificador" name="identificador" value="<?php echo $_SESSION['admin']; ?>" style="visibility:hidden">
         </form>
     </div>
     </div>
@@ -103,5 +90,3 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
       </div>
 </main>
 <?php }else{ header('Location: '.URL.'autenticacion');}?>
-
-

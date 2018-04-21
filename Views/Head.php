@@ -57,24 +57,21 @@
           });
           //CANTONES
           $("#enlaceajaxcantones").click(function (evento) {
-            provincia = $(provincia).val();
-            console.log(provincia);
-            /*
+              provincia = $(provincia).val();
               $.ajax({
                   dataType: "json",
-                  url: "https://ubicaciones.paginasweb.cr/provincias.json",
+                  url: "https://ubicaciones.paginasweb.cr/provincia/"+provincia+"/cantones.json",
                   data: {},
                   success: function (data) {
-                      var html = '<select class="browser-default" name="provincia" id="provincia" required>';
+                      var html = '<select class="browser-default" name="canton" id="canton" required>';
                       for(key in data) {
                           html += "<option value='"+key+"'>"+data[key]+"</option>";
                       }
                       html += "</select";
 
-                      $('#provincias').html(html);
+                      $('#cantones').html(html);
                   }
               });
-              */
           });
         })
     </script>

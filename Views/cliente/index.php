@@ -85,8 +85,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                         <td class="center"><?php echo $row['direccion_exacta']; ?></td>
                         <td class="center"><?php echo $row['nombre_usuario']; ?></td>
                         <td class="center">
-                            <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>cliente/update/<?php echo $row['identificador']; ?>"><i class="material-icons">build</i></a>
-                            <a class="open-Modal btn_delete btn-floating waves-effect waves-light red" data-id="<?php echo $row['identificador']; ?>" href="#modalEliminarDepartamento"><i class="material-icons">delete_forever</i></a>
+                          <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>productos/update/<?php echo $row['identificador']; ?>"><i class="material-icons">build</i></a>
+                          <a class="open-Modal btn_delete btn-floating waves-effect waves-light red" data-id="<?php echo $row['identificador']; ?>" href="#modalEliminarProducto"><i class="material-icons">delete_forever</i></a>
                         </td>
                     </tr>
                 <?php }

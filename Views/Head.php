@@ -38,6 +38,11 @@
     <script>
 
         $(document).ready(function () {
+          //CANTONES
+          function getCantones(id){
+            console.log(id);
+          }
+          
           //PROVINCIAS
           $("#enlaceajaxprovincias").click(function (evento) {
               $.ajax({
@@ -55,10 +60,7 @@
                   }
               });
           });
-          //CANTONES
-          function getCantones(id){
-            console.log(id);
-          }
+
           /*
           $("#enlaceajaxcantones").click(function (evento) {
               provincia = $(provincia).val();

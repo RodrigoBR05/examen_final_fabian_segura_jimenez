@@ -53,10 +53,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
             <thead>
               <tr>
                   <th class="center">Identificador</th>
-                  <th class="center">Tipo de cédula</th>
                   <th class="center">Cédula</th>
                   <th class="center">Nombre</th>
-                  <th class="center">Apellidos</th>
                   <th class="center">País</th>
                   <th class="center">Email</th>
                   <th class="center">Provincia</th>
@@ -73,10 +71,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                     while($row = mysqli_fetch_array($datos)){ ?>
                     <tr>
                         <td class="center"><?php echo $row['identificador']; ?></td>
-                        <td class="center"><?php echo $row['tipo_cedula']; ?></td>
                         <td class="center"><?php echo $row['cedula']; ?></td>
                         <td class="center"><?php echo $row['nombre']; ?></td>
-                        <td class="center"><?php echo $row['apellidos']; ?></td>
                         <td class="center"><?php echo $row['pais']; ?></td>
                         <td class="center"><?php echo $row['email']; ?></td>
                         <td class="center"><?php echo $row['provincia']; ?></td>

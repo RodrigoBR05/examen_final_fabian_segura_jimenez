@@ -60,11 +60,8 @@ class Cliente{
          WHERE identificador = '{$this->identificador}'";
         $this->con->consultaSimple($sql);
     }
-    
-/*
     public function read(){
         SELECT t1.*, t2.nombre as nombre_usuario FROM cliente t1 INNER JOIN usuario t2 ON t1.vendedor_asociado = t2.id;
-
         $sql = "SELECT t1.*, t2.nombre as nombre_usuario FROM cliente t1 INNER JOIN usuario t2 ON t1.vendedor_asociado = t2.id"
                 . "WHERE id_departamento = '{$this->id_departamento}'";
         $datos = $this->con->consultaRetorno($sql);
@@ -72,7 +69,6 @@ class Cliente{
 	   $row = mysqli_fetch_assoc($datos);
 	   return $row;
     }
-    */
 
 }
 

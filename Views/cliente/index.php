@@ -59,8 +59,6 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                   <th class="center">Apellidos</th>
                   <th class="center">País</th>
                   <th class="center">Email</th>
-                  <th class="center">Teléfono fijo</th>
-                  <th class="center">Teléfono celular</th>
                   <th class="center">Provincia</th>
                   <th class="center">Cantón</th>
                   <th class="center">Distrito</th>
@@ -81,8 +79,6 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                         <td class="center"><?php echo $row['apellidos']; ?></td>
                         <td class="center"><?php echo $row['pais']; ?></td>
                         <td class="center"><?php echo $row['email']; ?></td>
-                        <td class="center"><?php echo $row['telefono_fijo']; ?></td>
-                        <td class="center"><?php echo $row['telefono_celular']; ?></td>
                         <td class="center"><?php echo $row['provincia']; ?></td>
                         <td class="center"><?php echo $row['canton']; ?></td>
                         <td class="center"><?php echo $row['distrito']; ?></td>

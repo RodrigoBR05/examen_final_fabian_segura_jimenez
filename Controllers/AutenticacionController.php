@@ -19,8 +19,7 @@
                     if ($verificarUser['tipo_rol'] == 1) {
                         header('Location: '.URL.'usuarios?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
                     }elseif($verificarUser['tipo_rol'] == 2){
-                        //header('Location: '.URL.'activos?admin='.$verificarUser['id_usuario'].'&tipo='.$verificarUser['id_tipo_usuario']);
-                        //AutenticacionController::$idUsuario = $verificarUser['id_usuario'];
+                        header('Location: '.URL.'productos?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
                     }
 
                 }
@@ -35,7 +34,7 @@
         private function verificarUsuario($usuario,$email){
             $datos = $this->autenticacion->verificarUsuario($usuario,$email);
             return $datos;
-        }      
+        }
 
         public function logout() {
             header('Location: '.URL.'autenticacion');

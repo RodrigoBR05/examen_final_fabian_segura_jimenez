@@ -25,6 +25,9 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     <div class="container">
 
       <a href="#" id="enlaceajax">Obtener provincias</a>
+      <br>
+      <div id="destino"></div>
+      
     <div class="row">
         <form class="col s12" method="POST" id="agregar_form">
 

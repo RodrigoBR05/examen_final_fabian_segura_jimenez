@@ -8,7 +8,7 @@ class Autenticacion{
     public function __construct() {
         $this->con=new Conexion();
     }
-    
+
     public function set($atributo, $contenido){
 	$this->$atributo = $contenido;
     }
@@ -16,9 +16,15 @@ class Autenticacion{
     public function get($atributo){
 	return $this->$atributo;
     }
-    
+
     public function login($usuario,$clave){
-        $sql = "SELECT * FROM usuario WHERE nick = '{$usuario}'";
+      /*
+      $sql = sprintf("SELECT * FROM usuarios WHERE correo='%s' AND contrasenia = %s",
+      mysql_real_escape_string($correo), mysql_real_escape_string($contrasenia));
+      */
+
+
+        $sql = stripslashes("SELECT * FROM usuario WHERE nick='%s'", mysql_real_escape_string($usuario));
         $datos = $this->con->consultaRetorno($sql);
         $row = mysqli_fetch_array($datos);
         $claveUsuario = $row['contrasenia'];
@@ -27,8 +33,8 @@ class Autenticacion{
            return $row;
         }
         return NULL;
-    }       
-    
+    }
+
     public function verificarUsuario($usuario,$email){
         $sql = "SELECT * FROM usuario WHERE usuario = '{$usuario}'";
         $datos = $this->con->consultaRetorno($sql);
@@ -39,15 +45,13 @@ class Autenticacion{
         }
         return NULL;
     }
-    
+
     public function nuevaClave($usuario,$email,$nuevaClave){
         $fModificacion = date("Y/m/d");
         $encriptacionClave = password_hash($nuevaClave, PASSWORD_DEFAULT, [15]);
         $sql = "UPDATE usuario SET clave = '{$encriptacionClave}', fecha_modificacion = '{$fModificacion}' "
-        . "WHERE usuario = '{$usuario}'";                    
+        . "WHERE usuario = '{$usuario}'";
         $this->con->consultaSimple($sql);
     }
 }
 ?>
-
-

@@ -15,35 +15,19 @@ class ProductosController {
     }//index
 
     public function create(){
-        if($_POST){
-            $this->producto->set("idUsuario", $_POST['id_usuario']);
-            $this->producto->set("nombre", $_POST['nombre']);
-            $this->producto->set("descripcion", $_POST['descripcion']);
-            $this->producto->set("peso", $_POST['peso']);
-            $this->producto->set ("tipoPeso", $_POST['tipoPeso']);
-            $this->producto->set("proveedor", $_POST['proveedor']);
-            $this->producto->set("cantidadMinima", $_POST['cantidadMinima']);
-            $this->producto->set("cantidadActual", $_POST['cantidadActual']);
-            //Para guardar la imagen
-            $permitidos = array("image/jpeg", "image/png", "image/gif", "image/jpg");
-            $limite = 700;
-            $ruta ="";
-
-            if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024) {
-                $nombre = date('is') . $_FILES['imagen']['name'];
-                $ruta = "Views" . "/" . "productos" . "/" . "imagenes" ."/" . $nombre;
-                move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-                $this->producto->set("rutaImagen", $ruta);
-            }
-            $this->producto->create();
-            header('Location:'.URL.'productos/Create');
-        }//POST
-
+      if($_POST){
+          $this->producto->set("identificador", $_POST['identificador']);
+          $this->producto->set("codigo", $_POST['codigo']);
+          $this->producto->set("nombre", $_POST['nombre']);
+          $this->producto->set("marca", $_POST['marca']);
+          $this->producto->set ("presentacion", $_POST['presentacion']);
+          $this->producto->set("descripcion", $_POST['descripcion']);
+          $this->producto->set("moneda", $_POST['moneda']);
+          $this->producto->set("precio", $_POST['precio']);
+          $this->producto->create();
+          header('Location:'.URL.'productos/Create');
+      }//POST
     }//create
-
-    //public function agregar(){
-
-    //}//agregar
 
     public function update($id){
     if (!$_POST) {

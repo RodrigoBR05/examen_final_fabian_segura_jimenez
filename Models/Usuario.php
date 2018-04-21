@@ -12,7 +12,7 @@ class Usuario{
     public function __construct() {
         $this->con=new Conexion();
     }
-    
+
     public function set($atributo, $contenido){
 	$this->$atributo = $contenido;
     }
@@ -26,32 +26,38 @@ class Usuario{
         $datos = $this->con->consultaRetorno($sql);
         return $datos;
     }
-    
-    public function create(){        
+
+    public function toListVendedor(){
+        $sql = "SELECT * FROM usuario WHERE tipo_rol = 2";
+        $datos = $this->con->consultaRetorno($sql);
+        return $datos;
+    }
+
+    public function create(){
         $encriptacionClave = sha1($this->contrasenia);
         if ($this->tipo_rol == 1) {
             $this->rol = "Administrador";
         } elseif ($this->tipo_rol == 2) {
             $this->rol = "Vendedor";
-        } 
+        }
 
         $sql = "INSERT INTO usuario (nombre,nick,contrasenia,tipo_rol,rol)
             VALUES ('{$this->nombre}', '{$this->nick}', '{$encriptacionClave}', '{$this->tipo_rol}','{$this->rol}')";
         //print $sql;
-        $this->con->consultaSimple($sql);        
+        $this->con->consultaSimple($sql);
     }
-    
+
     public function delete(){
         $sql = "DELETE FROM usuario WHERE id = '{$this->id}'";
         $this->con->consultaSimple($sql);
     }
-    
+
     public function update(){
         if ($this->tipo_rol == 1) {
             $this->rol = "Administrador";
         } elseif ($this->tipo_rol == 2) {
             $this->rol = "Vendedor";
-        } 
+        }
         $sql = "UPDATE usuario SET nombre = '{$this->nombre}', nick = '{$this->nick}', "
         . "tipo_rol = '{$this->tipo_rol}',rol = '{$this->rol}' "
         . "WHERE id = '{$this->id}'";
@@ -64,8 +70,8 @@ class Usuario{
 	   //Envia un array
 	   $row = mysqli_fetch_assoc($datos);
 	   return $row;
-    }  
-    
+    }
+
 }
 
 ?>

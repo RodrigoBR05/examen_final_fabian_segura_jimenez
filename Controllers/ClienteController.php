@@ -71,7 +71,7 @@ class ClienteController {
     }//delete
 
     public function getUsuariosVendedor(){
-        $datos = $this->usuario->toList();
+        $datos = $this->usuario->toListVendedor();
         return $datos;
     }//getUsuariosVendedor
 }//class

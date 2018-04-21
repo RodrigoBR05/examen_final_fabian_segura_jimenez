@@ -54,7 +54,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
 
            <div class="row">
             <div class="input-field col s6">
-              <input type='text' id="precio" name="precio" class="validate" value="<?php echo $datos['peso']; ?>" required>
+              <input type='text' id="precio" name="precio" class="validate" value="<?php echo $datos['precio']; ?>" required>
               <label for="precio" data-error="inválido" data-success="válido">Precio</label>
             </div>
             <div class="input-field col s6">

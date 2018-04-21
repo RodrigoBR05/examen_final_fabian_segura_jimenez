@@ -40,7 +40,7 @@
         function getCantones(provinciaId){
           $.ajax({
               dataType: "json",
-              url: "https://ubicaciones.paginasweb.cr/provincia/"+id+"/cantones.json",
+              url: "https://ubicaciones.paginasweb.cr/provincia/"+provinciaId+"/cantones.json",
               data: {},
               success: function (data) {
                   var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(provinciaId, this.value);">';

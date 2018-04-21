@@ -9,8 +9,8 @@ class ClienteController {
     private $cliente;
 
     function __construct() {
-        $this->usuario = new Usuario();
-        $this->cliente = new Cliente();
+      $this->usuario = new Usuario();
+      $this->cliente = new Cliente();
     }//__construct
 
     public function index() {
@@ -114,5 +114,5 @@ class ClienteController {
     }//getDepartamentos
 }//class
 
-    $activos = new ActivosController();
+    $cliente = new ClienteController();
 ?>

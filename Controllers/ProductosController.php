@@ -31,12 +31,12 @@ class ProductosController {
 
     public function update($id){
     if (!$_POST) {
-            $this->producto->set("identificador", $identificador);
+            $this->producto->set("identificador", $id);
             $datos = $this->producto->read();
             return $datos;
         }
         else {
-            $this->producto->set("identificador", $identificador);
+            $this->producto->set("identificador", $id);
             $this->producto->set("codigo", $_POST['codigo']);
             $this->producto->set("nombre", $_POST['nombre']);
             $this->producto->set("marca", $_POST['marca']);

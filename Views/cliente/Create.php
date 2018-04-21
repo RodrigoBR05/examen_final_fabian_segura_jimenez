@@ -72,16 +72,23 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
           </div>
 
           <div class="row">
-            <a href="#" id="enlaceajaxprovincias">Obtener provincias</a>
-            <br>
             <div class="input-field col s4">
+              <a href="#" id="enlaceajaxprovincias">Obtener provincias</a>
+              <br>
               <div id="provincias"></div>
             </div>
-            
-            <div id="cantones"></div>
-            <div id="distritos"></div>
 
+            <div class="input-field col s4">
+              <a href="#" id="enlaceajaxcantones">Obtener cantones</a>
+              <br>
+              <div id="cantones"></div>
+            </div>
 
+            <div class="input-field col s4">
+              <a href="#" id="enlaceajaxdistritos">Obtener distritos</a>
+              <br>
+              <div id="distritos"></div>
+            </div>
 
           </div>
 

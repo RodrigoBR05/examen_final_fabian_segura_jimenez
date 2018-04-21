@@ -64,6 +64,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                   <th class="center">Provincia</th>
                   <th class="center">Cantón</th>
                   <th class="center">Distrito</th>
+                  <th class="center">Dirección exacta</th>
                   <th class="center">Vendedor</th>
               </tr>
             </thead>

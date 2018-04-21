@@ -58,7 +58,7 @@ class ProductosController {
     }//read
 
     public function delete($id){
-        $this->producto->set("identificador", $identificador);
+        $this->producto->set("identificador", $id);
         $this->producto->delete();
         header('Location:' . URL . 'productos');
     }//eliminar

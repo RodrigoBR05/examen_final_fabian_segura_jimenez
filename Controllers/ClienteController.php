@@ -69,10 +69,10 @@ class ClienteController {
         header('Location:'.URL.'activos');
     }//delete
 
-    public function getDepartamentos(){
-        $datos = $this->departamento->toList();
+    public function getUsuarios(){
+        $datos = $this->usuario->toList();
         return $datos;
-    }//getDepartamentos
+    }//getUsuarios
 }//class
 
     $cliente = new ClienteController();

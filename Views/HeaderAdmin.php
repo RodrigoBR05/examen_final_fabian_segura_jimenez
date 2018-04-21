@@ -23,8 +23,8 @@
               <li class="bold"><a class="collapsible-header waves-effect waves-light white-text"><i class="material-icons left white-text">group_add</i>CLIENTES</a>
                 <div class="collapsible-body light-blue darken-1">
                   <ul>
-                    <li><a class="white-text" href="<?php echo URL; ?>departamentos/create"><i class="material-icons left white-text">playlist_add</i>Agregar cliente</a></li>
-                    <li><a class="white-text" href="<?php echo URL; ?>departamentos"><i class="material-icons left white-text">list</i>Listado de clientes</a></li>
+                    <li><a class="white-text" href="<?php echo URL; ?>cliente/create"><i class="material-icons left white-text">playlist_add</i>Agregar cliente</a></li>
+                    <li><a class="white-text" href="<?php echo URL; ?>cliente"><i class="material-icons left white-text">list</i>Listado de clientes</a></li>
                   </ul>
                 </div>
               </li>

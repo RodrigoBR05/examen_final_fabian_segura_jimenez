@@ -17,9 +17,11 @@
                 $verificarUser=$this->login($_POST['usuario'],$_POST['password']);
                 if($verificarUser){
                     if ($verificarUser['tipo_rol'] == 1) {
-                        header('Location: '.URL.'usuarios?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
+                      header('Location: '.URL.'usuarios?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
                     }elseif($verificarUser['tipo_rol'] == 2){
-                        header('Location: '.URL.'productos?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
+                      header('Location: '.URL.'usuarios?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
+
+                        //header('Location: '.URL.'productos?admin='.$verificarUser['id'].'&tipo='.$verificarUser['tipo_rol']);
                     }
 
                 }

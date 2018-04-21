@@ -23,6 +23,8 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
 
 <main>
     <div class="container">
+
+      <a href="#" id="enlaceajax">Obtener provincias</a>
     <div class="row">
         <form class="col s12" method="POST" id="agregar_form">
 
@@ -115,23 +117,4 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
       </div>
 </main>
 
-<script>
-    $(document).ready(function () {
-        $("#enlaceajax").click(function (evento) {
-            $.ajax({
-                dataType: "json",
-                url: "https://ubicaciones.paginasweb.cr/provincias.json",
-                data: {},
-                success: function (data) {
-                    var html = "<select>";
-                    for(key in data) {
-                        html += "<option value='"+key+"'>"+data[key]+"</option>";
-                    }
-                    html += "</select";
-                    $('#destino').html(html);
-                }
-            });
-        });
-    })
-</script>
 <?php }else{ header('Location: '.URL.'autenticacion');}?>

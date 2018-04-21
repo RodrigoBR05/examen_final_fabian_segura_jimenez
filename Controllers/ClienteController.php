@@ -14,7 +14,7 @@ class ClienteController {
     }//__construct
 
     public function index() {
-        $datos = $this->activo->toList();
+        $datos = $this->cliente->toList();
         return $datos;
     }//index
 

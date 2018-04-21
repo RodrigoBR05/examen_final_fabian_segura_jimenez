@@ -38,8 +38,25 @@
     <script>
         //CANTONES
         function getCantones(id){
+          $.ajax({
+              dataType: "json",
+              url: "https://ubicaciones.paginasweb.cr/provincia/"+id+"/cantones.json",
+              data: {},
+              success: function (data) {
+                  var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(this.value);">';
+                  for(key in data) {
+                      html += "<option value='"+key+"'>"+data[key]+"</option>";
+                  }
+                  html += "</select";
+
+                  $('#cantones').html(html);
+              }
+          });
+        }//getCantones
+
+        getDistrito(id){
           console.log(id);
-        }
+        }//getDistrito
 
         $(document).ready(function () {
           //PROVINCIAS
@@ -60,26 +77,9 @@
               });
           });
 
-          /*
           $("#enlaceajaxcantones").click(function (evento) {
-              provincia = $(provincia).val();
-              console.log(provincia);
-              $.ajax({
-                  dataType: "json",
-                  url: "https://ubicaciones.paginasweb.cr/provincia/"+provincia+"/cantones.json",
-                  data: {},
-                  success: function (data) {
-                      var html = '<select class="browser-default" name="canton" id="canton" required>';
-                      for(key in data) {
-                          html += "<option value='"+key+"'>"+data[key]+"</option>";
-                      }
-                      html += "</select";
 
-                      $('#cantones').html(html);
-                  }
-              });
           });
-          */
         })
     </script>
   </head>

@@ -79,18 +79,9 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
           </div>
 
           <div class="row">
-            <div class="input-field col s12">
-                <textarea id="descripcion" name="descripcion" class="materialize-textarea" class="validate" required></textarea>
-                <label for="descripcion" data-error="inválido" data-success="válido">Descripción del activo</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="text" id="donadoPor" name="donadoPor"  class="validate" required>
-              <label for="donadoPor" data-error="inválido" data-success="válido">Donado por</label>
-            </div>
-              <div class="input-field col s6">
-                 <select class="browser-default" name="departamento" required>
-                  <option value="" disabled selected>Seleccione el departamento</option>
-
+              <div class="input-field col s12">
+                 <select class="browser-default" name="vendedor_id" required>
+                  <option value="" disabled selected>Seleccione el vendedor</option>
                   <?php
                             if (!empty($datos)) {
                                 while($usuario = mysqli_fetch_array($datos)){ ?>

@@ -57,8 +57,20 @@
         //Distritos
         function getDistrito(id){
           var idProvincia = $("#provincia").val();
-          console.log(idProvincia);
-          console.log(id);
+          $.ajax({
+              dataType: "json",
+              url: "https://ubicaciones.paginasweb.cr/provincia/"+idProvincia+"/canton/"+id+"/distritos.json",
+              data: {},
+              success: function (data) {
+                  var html = '<select class="browser-default" name="distrito" id="distrito" required>';
+                  for(key in data) {
+                      html += "<option value='"+key+"'>"+data[key]+"</option>";
+                  }
+                  html += "</select";
+
+                  $('#distritos').html(html);
+              }
+          });
         }//getDistrito
 
         $(document).ready(function () {

@@ -1,22 +1,20 @@
 <?php
- 
 
-/* 
+
+/*
  productos
  */
-session_start(); 
+session_start();
 if (!isset($_SESSION['admin'],$_SESSION['tipo'])) {
     $_SESSION['tipo'] = $_GET['tipo'];
     $_SESSION['admin'] = $_GET['admin'];
 }
 if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
-    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/Head.php';
     if($_SESSION['tipo']==1){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminGeneral.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderAdmin.php';
     }elseif($_SESSION['tipo']==2){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminActivos.php';
-    }elseif($_SESSION['tipo']==3){
-        include $_SERVER['DOCUMENT_ROOT'].'/SCAI/Views/HeaderAdminInventarioComedor.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/examen_final_fabian_segura_jimenez/Views/HeaderVendedor.php';
     }
 ?>
 
@@ -32,81 +30,55 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
     <div class="container">
     <div class="row">
         <form class="col s12" method="POST" id="actualizar_form" enctype="multipart/form-data">
-          <div class="row">                   
+          <div class="row">
             <div class="input-field col s6">
-              <input type='text' id="nombre" name="nombre" class="validate" value="<?php echo $datos['nombre']; ?>" required>
+              <input type='text' id="codigo" name="codigo" class="validate" value="<?php echo $datos['codigo']; ?>" required>
+              <label for="codigo" data-error="inválido" data-success="válido">Código</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="nombre" name="nombre"  class="validate" value="<?php echo $datos['nombre']; ?>" required>
               <label for="nombre" data-error="inválido" data-success="válido">Nombre</label>
             </div>
+          </div>
+
+          <div class="row">
             <div class="input-field col s6">
-                <input type="text" id="proveedor" name="proveedor"  class="validate" value="<?php echo $datos['proveedor']; ?>" required>
-              <label for="proveedor" data-error="inválido" data-success="válido">Proveedor</label>
+              <input type='text' id="marca" name="marca" class="validate" value="<?php echo $datos['marca']; ?>" required>
+              <label for="marca" data-error="inválido" data-success="válido">Marca</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="presentacion" name="presentacion"  class="validate" value="<?php echo $datos['nombre']; ?>" required>
+              <label for="presentacion" data-error="inválido" data-success="válido">Presentación</label>
             </div>
           </div>
+
+           <div class="row">
+            <div class="input-field col s6">
+              <input type='text' id="precio" name="precio" class="validate" value="<?php echo $datos['peso']; ?>" required>
+              <label for="precio" data-error="inválido" data-success="válido">Precio</label>
+            </div>
+            <div class="input-field col s6">
+               <select class="browser-default" name="moneda" readonly="">
+                <option value="" disabled selected>Seleccione la moneda</option>
+                <option value="crc" <?php if($datos['moneda'] == "crc"){?> selected= "selected" <?php }?>>CRC</option>
+                <option value="usd"<?php if($datos['moneda'] == "usd"){?> selected= "selected" <?php }?>>USD</option>
+                <option value="eur"<?php if($datos['moneda'] == "eur"){?> selected= "selected" <?php }?>>EUR</option>
+
+              </select>
+            </div>
+          </div>
+
           <div class="row">
             <div class="input-field col s12">
                 <textarea id="descripcion" name="descripcion" class="materialize-textarea" class="validate"><?php echo $datos['descripcion']; ?></textarea>
                 <label for="descripcion" data-error="inválido" data-success="válido">Descripción del producto</label>
             </div>
-           </div> 
-           <div class="row">
-            <div class="input-field col s6">
-              <input type='text' id="peso" name="peso" class="validate" value="<?php echo $datos['peso']; ?>" required>
-              <label for="peso" data-error="inválido" data-success="válido">Peso</label>              
-            </div>
-            <div class="input-field col s6">                 
-               <select class="browser-default" name="tipoPeso" readonly="">
-                <option value="" disabled selected>Seleccione el tipo</option>
-                <option value="UNIDADES" <?php if($datos['tipo_peso'] == "UNIDADES"){?> selected= "selected" <?php }?>>Unidades</option>
-                <option value="KILOGRAMOS"<?php if($datos['tipo_peso'] == "KILOGRAMOS"){?> selected= "selected" <?php }?>>Kilogramos</option>
-                <option value="GRAMOS"<?php if($datos['tipo_peso'] == "GRAMOS"){?> selected= "selected" <?php }?>>Gramos</option>
-                <option value="LITROS"<?php if($datos['tipo_peso'] == "LITROS"){?> selected= "selected" <?php }?>>Litros</option>
-                <option value="GALONES"<?php if($datos['tipo_peso'] == "GALONES"){?> selected= "selected" <?php }?>>Galones</option>
-               
-              </select>
-            </div>   
-          </div>       
-            <div class="row">
-            <div class="input-field col s6">
-                <input type="number" id="cantidadMinima" name="cantidadMinima" class="validate" 
-                       value="<?php echo $datos['cantidad_minima']; ?>" required readonly="readonly">
-              <label for="cantidadMinima" data-error="inválido" data-success="válido">Cantidad Mínima</label>
-            </div>            
-            <div class="input-field col s6">
-                <input type="number" id="cantidadActual" name="cantidadActual" class="validate"  
-                       value="<?php echo $datos['cantidad_actual']; ?>" required readonly="readonly">
-              <label for="cantidadActual" data-error="inválido" data-success="válido">Cantidad actual</label>
-            </div>            
-          </div>
-          
-          <div class="row">
-            <div class="input-field col s6">
-                <input type="number" id="agregarCantidad" name="agregarCantidad" class="validate" required>
-              <label for="agregarCantidad" data-error="inválido" data-success="válido">Agregar cantidad productos</label>
-            </div>            
-            <div class="input-field col s6">
-                <input type="number" id="descontarCantidad" name="descontarCantidad" class="validate" required>
-              <label for="descontarCantidad" data-error="inválido" data-success="válido">Descontar cantidad productos</label>
-            </div>            
-          </div>  
-            
-            
-          <div class="row center">
-            <img src="<?php echo URL.$datos['ruta_imagen']; ?>" width="150" height="150" alt="" class="circle responsive-img">
-          </div>
-            <div class="row">       
-            <div class="input-field col s6">
-                <label for="imagen">Cambiar imagen</label>
-                 </div>
-            </div>
-            <div class="row">                
-                <div class="input-field col s6">
-                    <input type="file" name="imagen" id="imagen" >
-                </div>
-            </div>
+           </div>
+
             <div class='row center'>
               <button data-target="modalActualizarProducto" name='btn_reg_producto' class='col s12 l4 offset-l4 btn waves-effect blue darken-4'>Actualizar producto</button>
             </div>
-            <input type='text' id="id_usuario" name="id_usuario" value="<?php echo $_SESSION['admin']; ?>" style="visibility:hidden">
+            <input type='text' id="identificador" name="identificador" value="<?php echo $_SESSION['admin']; ?>" style="visibility:hidden">
         </form>
     </div>
     </div>
@@ -123,6 +95,3 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
       </div>
 </main>
 <?php }else{ header('Location: '.URL.'autenticacion');}?>
-
-
-

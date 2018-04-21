@@ -24,10 +24,6 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
 <main>
     <div class="container">
 
-      <a href="#" id="enlaceajax">Obtener provincias</a>
-      <br>
-      <div id="destino"></div>
-      
     <div class="row">
         <form class="col s12" method="POST" id="agregar_form">
 
@@ -73,6 +69,20 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
               <input type='text' id="telefono_celular" name="telefono_celular" class="validate" required>
               <label for="telefono_celular" data-error="inválido" data-success="válido">Teléfono celular</label>
             </div>
+          </div>
+
+          <div class="row">
+            <a href="#" id="enlaceajaxprovincias">Obtener provincias</a>
+            <br>
+            <div class="input-field col s4">
+              <div id="provincias"></div>
+            </div>
+            
+            <div id="cantones"></div>
+            <div id="distritos"></div>
+
+
+
           </div>
 
 

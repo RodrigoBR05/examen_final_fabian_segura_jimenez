@@ -43,7 +43,7 @@
               url: "https://ubicaciones.paginasweb.cr/provincia/"+id+"/cantones.json",
               data: {},
               success: function (data) {
-                  var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(this.value);">';
+                  var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(id, this.value);">';
                   for(key in data) {
                       html += "<option value='"+key+"'>"+data[key]+"</option>";
                   }
@@ -55,7 +55,8 @@
         }//getCantones
 
         //Distritos
-        function getDistrito(id){
+        function getDistrito(provincia, id){
+          console.log(provincia);
           console.log(id);
         }//getDistrito
 

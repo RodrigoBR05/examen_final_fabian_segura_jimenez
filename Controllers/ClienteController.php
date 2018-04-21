@@ -23,15 +23,14 @@ class ClienteController {
              return $this->getDepartamentos();
         }
         else{
-            //print AutenticacionController::$idUsuario;
-            $this->activo->set("idUsuario", $_POST['id_usuario']);
-            $this->activo->set("numeroSerie", $_POST['numSerie']);
-            $this->activo->set("nombre", $_POST['nombre']);
-            $this->activo->set("descripcion", $_POST['descripcion']);
-            $this->activo->set("donadoPor", $_POST['donadoPor']);
-            $this->activo->set("ubicacionDepartamento", $_POST['departamento']);
-            $this->activo->set("valorAdquisicion", $_POST['valorAdquisicion']);
-            $this->activo->set("valorActual", $_POST['valorActual']);
+            $this->cliente->set("idUsuario", $_POST['id_usuario']);
+            $this->cliente->set("numeroSerie", $_POST['numSerie']);
+            $this->cliente->set("nombre", $_POST['nombre']);
+            $this->cliente->set("descripcion", $_POST['descripcion']);
+            $this->cliente->set("donadoPor", $_POST['donadoPor']);
+            $this->cliente->set("ubicacionDepartamento", $_POST['departamento']);
+            $this->cliente->set("valorAdquisicion", $_POST['valorAdquisicion']);
+            $this->cliente->set("valorActual", $_POST['valorActual']);
             //Para guardar la imagen
             $permitidos = array("image/jpeg", "image/png", "image/gif", "image/jpg");
             $limite = 700;

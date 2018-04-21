@@ -29,8 +29,6 @@ class ProductosController {
       }//POST
     }//create
 
-    echo "string";
-    
     public function update($id){
     if (!$_POST) {
             $this->producto->set("identificador", $id);

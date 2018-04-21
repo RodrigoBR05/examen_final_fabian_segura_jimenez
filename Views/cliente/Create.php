@@ -77,6 +77,33 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
               <label for="direccion_exacta" data-error="inválido" data-success="válido">Dirección exacta</label>
             </div>
           </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+                <textarea id="descripcion" name="descripcion" class="materialize-textarea" class="validate" required></textarea>
+                <label for="descripcion" data-error="inválido" data-success="válido">Descripción del activo</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="donadoPor" name="donadoPor"  class="validate" required>
+              <label for="donadoPor" data-error="inválido" data-success="válido">Donado por</label>
+            </div>
+              <div class="input-field col s6">
+                 <select class="browser-default" name="departamento" required>
+                  <option value="" disabled selected>Seleccione el departamento</option>
+
+                  <?php
+                            if (!empty($datos)) {
+                                while($usuario = mysqli_fetch_array($datos)){ ?>
+                                    ?>
+                  <option value="<?php echo $usuario['id'];?>"><?php echo $usuario['nombre'];?></option>
+                   <?php
+                                }
+                            }
+                            ?>
+                </select>
+          </div>
+          </div>
+
           <div class='row center'>
             <button data-target="modalAgregarCliente" name='btn_login' class='col s12 l4 offset-l4 btn waves-effect blue darken-4'>Registrar departamento</button>
           </div>

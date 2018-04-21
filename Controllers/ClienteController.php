@@ -20,7 +20,8 @@ class ClienteController {
 
     public function create(){
          if (!$_POST) {
-             return $this->getUsuariosVendedor();
+           $datos = $this->getUsuariosVendedor();
+           return $datos;
         }
         else{
             $this->cliente->set("idUsuario", $_POST['id_usuario']);
@@ -72,7 +73,7 @@ class ClienteController {
     public function getUsuariosVendedor(){
         $datos = $this->usuario->toList();
         return $datos;
-    }//getUsuarios
+    }//getUsuariosVendedor
 }//class
 
     $cliente = new ClienteController();

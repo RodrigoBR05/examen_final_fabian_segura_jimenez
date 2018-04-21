@@ -10,15 +10,6 @@
             <ul class="collapsible collapsible-accordion">
 
               <li><div class="divider"></div></li>
-              <li class="bold"><a class="collapsible-header  waves-effect waves-light white-text"><i class="material-icons left white-text">supervisor_account</i>USUARIOS</a>
-                <div class="collapsible-body light-blue darken-1">
-                  <ul>
-                    <li><a class="white-text" href="<?php echo URL; ?>usuarios/create"><i class="material-icons left white-text">playlist_add</i>Agregar usuario</a></li>
-                    <li><a class="white-text" href="<?php echo URL; ?>usuarios"><i class="material-icons left white-text">list</i>Listado de usuarios</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li><div class="divider"></div></li>
 
               <li class="bold"><a class="collapsible-header waves-effect waves-light white-text"><i class="material-icons left white-text">group_add</i>CLIENTES</a>
                 <div class="collapsible-body light-blue darken-1">

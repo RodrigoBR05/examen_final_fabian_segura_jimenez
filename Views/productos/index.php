@@ -78,7 +78,7 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
                       <td class="center"><?php echo $row['moneda']; ?></td>
                       <td class="center"><?php echo $row['precio']; ?></td>
                       <?php
-                        if (  if($_SESSION['tipo']==1){
+                        if($_SESSION['tipo']==1){
                       ?>
                         <td class="center">
                           <a class="btn-floating waves-effect waves-light orange" href="<?php echo URL; ?>productos/update/<?php echo $row['identificador']; ?>"><i class="material-icons">build</i></a>

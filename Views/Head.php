@@ -37,13 +37,13 @@
 
     <script>
         //CANTONES
-        function getCantones(id){
+        function getCantones(provinciaId){
           $.ajax({
               dataType: "json",
               url: "https://ubicaciones.paginasweb.cr/provincia/"+id+"/cantones.json",
               data: {},
               success: function (data) {
-                  var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(id, this.value);">';
+                  var html = '<select class="browser-default" name="canton" id="canton" required onchange="getDistrito(provinciaId, this.value);">';
                   for(key in data) {
                       html += "<option value='"+key+"'>"+data[key]+"</option>";
                   }

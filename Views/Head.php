@@ -45,7 +45,7 @@
                   url: "https://ubicaciones.paginasweb.cr/provincias.json",
                   data: {},
                   success: function (data) {
-                      var html = '<select class="browser-default" name="provincia" id="provincia" required>';
+                      var html = '<select class="browser-default" name="provincia" id="provincia" required  onchange="getCantones(this.value);>';
                       for(key in data) {
                           html += "<option value='"+key+"'>"+data[key]+"</option>";
                       }
@@ -56,6 +56,10 @@
               });
           });
           //CANTONES
+          function getCantones(id){
+            console.log(id);
+          }
+          /*
           $("#enlaceajaxcantones").click(function (evento) {
               provincia = $(provincia).val();
               console.log(provincia);
@@ -74,6 +78,7 @@
                   }
               });
           });
+          */
         })
     </script>
   </head>

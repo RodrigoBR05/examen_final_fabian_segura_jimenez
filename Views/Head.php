@@ -58,6 +58,7 @@
           //CANTONES
           $("#enlaceajaxcantones").click(function (evento) {
               provincia = $(provincia).val();
+              console.log(provincia);
               $.ajax({
                   dataType: "json",
                   url: "https://ubicaciones.paginasweb.cr/provincia/"+provincia+"/cantones.json",

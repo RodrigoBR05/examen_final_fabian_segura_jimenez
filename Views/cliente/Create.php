@@ -79,13 +79,13 @@ if (isset($_SESSION['admin'],$_SESSION['tipo'])) {
             </div>
 
             <div class="input-field col s4">
-              <label>Cantones</label>
+              <a href="#">Cantón</a>
               <br>
               <div id="cantones"></div>
             </div>
 
             <div class="input-field col s4">
-              <label>Distritos</label>
+              <a href="#">Distrito</a>
               <br>
               <div id="distritos"></div>
             </div>

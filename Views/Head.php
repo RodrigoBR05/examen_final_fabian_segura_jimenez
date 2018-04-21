@@ -36,13 +36,12 @@
 
 
     <script>
+        //CANTONES
+        function getCantones(id){
+          console.log(id);
+        }
 
         $(document).ready(function () {
-          //CANTONES
-          function getCantones(id){
-            console.log(id);
-          }
-          
           //PROVINCIAS
           $("#enlaceajaxprovincias").click(function (evento) {
               $.ajax({
